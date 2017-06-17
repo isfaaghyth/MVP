@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MVP</string>
+    <string name="btn_login">LOGIN</string>
 </resources>
