@@ -7,16 +7,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by isfaaghyth on 6/17/17.
- * NetworkClient untuk melakukan request terhadap url main.
- * memiliki method static request() yang nantikan dapat digunakan oleh class yang membutuhkan
- * tanpa inisialisasi objek.
  */
 
 public class NetworkClient {
 
     public static Retrofit request() {
         return new Retrofit.Builder()
-                .baseUrl(Const.BASE_URL)
+                .baseUrl(Const.MAIN_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
