@@ -1,5 +1,8 @@
 package isfaaghyth.app.mvp.base;
 
+import android.content.DialogInterface;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
@@ -22,5 +25,14 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     @Override protected void onDestroy() {
         super.onDestroy();
         if (presenter != null) presenter.dettachView();
+    }
+
+    protected void showAlertMessage(String message) {
+        final AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setMessage(message);
+        alert.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialog, int which) {}
+        });
+        alert.show();
     }
 }
