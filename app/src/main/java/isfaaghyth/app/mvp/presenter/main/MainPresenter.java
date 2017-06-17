@@ -13,5 +13,4 @@ public class MainPresenter extends BasePresenter<MainView> {
         super.attachView(view);
     }
 
-
 }

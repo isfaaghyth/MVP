@@ -14,7 +14,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding(R.layout.activity_main);
     }
 
 }

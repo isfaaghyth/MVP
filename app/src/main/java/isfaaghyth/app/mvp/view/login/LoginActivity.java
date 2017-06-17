@@ -11,6 +11,7 @@ import isfaaghyth.app.mvp.R;
 import isfaaghyth.app.mvp.base.BaseActivity;
 import isfaaghyth.app.mvp.model.LoginModel;
 import isfaaghyth.app.mvp.presenter.login.LoginPresenter;
+import isfaaghyth.app.mvp.util.SessionManager;
 import isfaaghyth.app.mvp.view.main.MainActivity;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginView {
@@ -37,6 +38,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override public void onSuccess(LoginModel result) {
         if (result.isStatus()) {
+            SessionManager.save("is_login", true);
             openMain();
         } else {
             showAlertMessage(result.getMessage());

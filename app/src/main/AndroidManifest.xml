@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="isfaaghyth.app.mvp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -12,8 +14,7 @@
         android:theme="@style/AppTheme.NoActionBar">
 
         <activity
-            android:name=".view.main.MainActivity"
-            android:theme="@style/AppTheme">
+            android:name=".view.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +23,8 @@
         </activity>
 
         <activity
-            android:name=".view.login.LoginActivity"/>
+            android:name=".view.main.MainActivity"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>
