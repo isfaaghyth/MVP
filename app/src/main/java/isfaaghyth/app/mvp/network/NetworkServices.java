@@ -1,8 +1,10 @@
 package isfaaghyth.app.mvp.network;
 
+import isfaaghyth.app.mvp.model.EmployeeModel;
 import isfaaghyth.app.mvp.model.LoginModel;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import rx.Observable;
 
@@ -13,8 +15,10 @@ import rx.Observable;
 public interface NetworkServices {
 
     @FormUrlEncoded @POST("/api/login.php")
-    Observable<LoginModel> login (
+    Observable<LoginModel> postLogin (
             @Field("email") String email,
             @Field("password") String password);
 
+    @GET("/")
+    Observable<EmployeeModel> getEmployee();
 }

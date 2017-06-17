@@ -25,7 +25,7 @@ public class LoginPresenter extends BasePresenter<LoginView> {
     }
 
     public void onRequestLogin(String email, String password) {
-        onSubscribe(service.login(email, password), new RequestCallback<LoginModel>() {
+        onSubscribe(service.postLogin(email, password), new RequestCallback<LoginModel>() {
             @Override public void onSuccess(LoginModel model) {
                 view.onSuccess(model);
             }
