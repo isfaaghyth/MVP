@@ -15,6 +15,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
     protected P presenter;
     protected abstract P initPresenter();
+    protected abstract void initialize();
 
     protected void binding(int layoutId) {
         setContentView(layoutId);

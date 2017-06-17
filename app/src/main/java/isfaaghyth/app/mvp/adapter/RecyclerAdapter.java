@@ -40,12 +40,16 @@ public abstract class RecyclerAdapter<M, VH extends RecyclerView.ViewHolder> ext
         }
     }
 
-    @Override public void onBindViewHolder(VH holder, int position, List<Object> payloads) {
+    @Override public void onBindViewHolder(VH holder, int position) {
         M model = getItem(position);
         bind(holder, model, position);
     }
 
     private M getItem(int position) {
         return datas.get(position);
+    }
+
+    @Override public int getItemCount() {
+        return datas.size();
     }
 }
