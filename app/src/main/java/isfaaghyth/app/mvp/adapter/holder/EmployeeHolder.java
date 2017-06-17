@@ -14,8 +14,8 @@ import isfaaghyth.app.mvp.R;
 
 public class EmployeeHolder extends RecyclerView.ViewHolder {
 
-    @BindView(R.id.txt_title) private TextView txtTitle;
-    @BindView(R.id.txt_desc) private TextView txtDesc;
+    @BindView(R.id.txt_title) TextView txtTitle;
+    @BindView(R.id.txt_desc) TextView txtDesc;
 
     public EmployeeHolder(View itemView) {
         super(itemView);

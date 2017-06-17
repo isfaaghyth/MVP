@@ -18,7 +18,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
     @BindView(R.id.lst_employee) RecyclerView lstEmployee;
 
-    private ArrayList<EmployeeModel> datas = new ArrayList<>();
+    private ArrayList<EmployeeModel.Data> datas = new ArrayList<>();
     private RecyclerAdapter adapter;
 
     @Override protected MainPresenter initPresenter() {
@@ -34,21 +34,20 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     @Override protected void initialize() {
         presenter.loadEmployees();
         lstEmployee.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new RecyclerAdapter<EmployeeModel, EmployeeHolder>(R.layout.layout_employee_item, EmployeeHolder.class, EmployeeModel.class, datas) {
-            @Override protected void bind(EmployeeHolder holder, EmployeeModel model, int position) {
-                for (int i = 0; i < model.getData().size(); i++) {
-                    holder.setContent(model.getData().get(i).getName(), model.getData().get(i).getId()+"");
-                }
+        adapter = new RecyclerAdapter<EmployeeModel.Data, EmployeeHolder>(R.layout.layout_employee_item, EmployeeHolder.class, EmployeeModel.Data.class, datas) {
+            @Override protected void bind(EmployeeHolder holder, EmployeeModel.Data model, int position) {
+                holder.setContent(model.getName(), model.getId()+"");
             }
         };
         lstEmployee.setAdapter(adapter);
     }
 
     @Override public void onSuccess(EmployeeModel model) {
-
+        datas = model.getData();
+        adapter.notifyDataSetChanged();
     }
 
     @Override public void onError(String message) {
-
+        showAlertMessage(message);
     }
 }
