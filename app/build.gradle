@@ -10,7 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "BASE_URL", "\"http://test.com\"")
+        buildConfigField("String", "BASE_URL", "\"https://isfaaghyth.000webhostapp.com\"")
     }
     buildTypes {
         release {
