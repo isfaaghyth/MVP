@@ -16,12 +16,11 @@ public class LoginPresenter extends BasePresenter<LoginView> {
         super.attachView(view);
     }
 
-    public boolean isLogin() {
-        if (SessionManager.checkExist("is_login")) return false;
-        if (SessionManager.grabBoolean("is_login")) {
-            return true;
-        } else {
-            return false;
+    public void isLogin() {
+        if (SessionManager.checkExist("is_login")) {
+            if (SessionManager.grabBoolean("is_login")) {
+                view.openMain();
+            }
         }
     }
 

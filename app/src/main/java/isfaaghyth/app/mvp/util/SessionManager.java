@@ -11,19 +11,16 @@ import isfaaghyth.app.mvp.App;
  */
 
 public class SessionManager {
-    private static final String TAG = "CacheManager";
 
     private static SharedPreferences getPref() {
         return PreferenceManager.getDefaultSharedPreferences(App.getContext());
     }
 
     public static void save(String key, String value) {
-        Log.d(TAG, "saveCache: " + value);
         getPref().edit().putString(key, value).apply();
     }
 
     public static void save(String key, Boolean value) {
-        Log.d(TAG, "saveCache: " + value);
         getPref().edit().putBoolean(key, value).apply();
     }
 
