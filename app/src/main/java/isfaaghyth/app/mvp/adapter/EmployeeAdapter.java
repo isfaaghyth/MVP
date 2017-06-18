@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp;
+package isfaaghyth.app.mvp.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import isfaaghyth.app.mvp.R;
 import isfaaghyth.app.mvp.adapter.holder.EmployeeHolder;
 import isfaaghyth.app.mvp.model.EmployeeModel;
 

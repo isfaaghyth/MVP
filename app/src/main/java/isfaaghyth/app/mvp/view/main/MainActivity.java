@@ -3,15 +3,10 @@ package isfaaghyth.app.mvp.view.main;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
-import isfaaghyth.app.mvp.EmployeeAdapter;
+import isfaaghyth.app.mvp.adapter.EmployeeAdapter;
 import isfaaghyth.app.mvp.R;
-import isfaaghyth.app.mvp.adapter.RecyclerAdapter;
-import isfaaghyth.app.mvp.adapter.holder.EmployeeHolder;
 import isfaaghyth.app.mvp.base.BaseActivity;
 import isfaaghyth.app.mvp.model.EmployeeModel;
 import isfaaghyth.app.mvp.presenter.main.MainPresenter;
