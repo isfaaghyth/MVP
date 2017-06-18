@@ -26,6 +26,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding(R.layout.activity_login);
+        //user login: admin@me.com:123
     }
 
     @Override protected void initialize() {
