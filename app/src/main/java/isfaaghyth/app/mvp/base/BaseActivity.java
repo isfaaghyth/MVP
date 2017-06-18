@@ -1,7 +1,6 @@
 package isfaaghyth.app.mvp.base;
 
 import android.content.DialogInterface;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
@@ -21,6 +20,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         setContentView(layoutId);
         ButterKnife.bind(this);
         presenter = initPresenter();
+        initialize();
     }
 
     @Override protected void onDestroy() {
